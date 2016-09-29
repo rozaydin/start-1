@@ -1,0 +1,35 @@
+{
+  "name": "start",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ridvan Ozaydin"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-permission": "latest",
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-aria": "latest",
+    "angular-messages": "latest",
+    "angular-material": "latest",
+    "angular-sanitize": "latest",
+    "angular-ui-router": "latest",
+    "ngstorage": "latest",
+    "angular-filter": "latest",
+    "angular-material-data-table": "latest",
+    "flag-icon-css": "latest",
+    "font-awesome": "latest",
+    "ngletteravatar": "latest"
+  }
+}
