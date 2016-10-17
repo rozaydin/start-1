@@ -15,5 +15,6 @@ Starter project for Angular Material Projects that includes common libraries.
 * angular-material-data-table
 * flag-icon-css
 * font-awesome
+* angular-material-icons
 * ng-letter-avatar
 
