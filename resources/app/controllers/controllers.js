@@ -4,19 +4,25 @@
 
 angular.module("controllers", [])
 
-    // Login Ctrl
-    .controller("LoginCtrl", function ($state, $stateParams, $sessionStorage, $localStorage) {
+// Login Ctrl
+    .controller("LoginCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage) {
 
     })
 
     // Main Ctrl
-    .controller("MainCtrl", function ($state, $stateParams, $sessionStorage, $localStorage) {
+    .controller("MainCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $mdSidenav) {
+
+        $scope.toggleLeft = function () {
+            $mdSidenav('left').toggle();
+        };
+
+        $scope.toggleLeft();
 
     })
 
 
     // Dash Ctrl
-    .controller("DashCtrl", function ($state, $stateParams, $sessionStorage, $localStorage) {
+    .controller("DashCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage) {
 
     });
 

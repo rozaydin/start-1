@@ -1,5 +1,34 @@
-Main Screen
+<md-content layout="column" layout-fill md-theme="docs-dark" class="md-padding" flex="100">
+    <!-- navigation bar -->
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()">
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
 
-<div ui-view="content">
+            <h2>
+                <span>Sample Application</span>
+            </h2>
 
-</div>
+        </div>
+    </md-toolbar>
+
+    <!-- side navigation -->
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+
+        <md-toolbar>
+            <h1 class="md-toolbar-tools">Side Menu</h1>
+        </md-toolbar>
+
+        <md-content layout-margin>
+            <p>
+                Page Navigation Menu
+            </p>
+        </md-content>
+
+    </md-sidenav>
+
+    <!-- content -->
+    <div ui-view="content"></div>
+
+<md-content/>

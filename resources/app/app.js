@@ -11,6 +11,7 @@ angular.module('app', ['ui.router',
     'permission',
     'permission.ui',
     'ngSanitize',
+    'ngMdIcons',
 
     // Controllers, Services, Directives
 
@@ -35,6 +36,12 @@ angular.module('app', ['ui.router',
      *  This is to prevent accidental instantiation of services before they have been fully configured.
      */
     .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdDateLocaleProvider) {
+
+        $mdThemingProvider.theme('docs-dark', 'default')
+            .primaryPalette('grey')
+            .warnPalette('red')
+            .accentPalette('blue')
+            .dark();
 
         // Configure States
 
