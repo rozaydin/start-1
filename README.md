@@ -1,6 +1,12 @@
 # start-1
 
-Starter project for Angular Material Projects that includes below libraries:
+Starter project for Angular Material Projects
+
+![Alt text](doc/img-1.png?raw=true "Side Menu")
+![Alt text](doc/img-2.png?raw=true "Dashboard")
+
+
+start-1 includes below libraries:
 
 * [angularjs](https://angularjs.org/)
 * [angular-permission](https://github.com/Narzerus/angular-permission)
