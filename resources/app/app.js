@@ -13,11 +13,11 @@ angular.module('app', ['ui.router',
     'ngSanitize',
     'ngMdIcons',
 
-    // Controllers, Services, Directives
-
+    // Controllers, Services, Directives, Components
     'controllers',
     'services',
-    'directives'
+    'directives',
+    'components'
 ])
 
 

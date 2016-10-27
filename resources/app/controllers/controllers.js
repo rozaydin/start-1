@@ -13,10 +13,8 @@ angular.module("controllers", [])
     .controller("MainCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $mdSidenav) {
 
         $scope.toggleLeft = function () {
-            $mdSidenav('left').toggle();
+            $mdSidenav("left").toggle();
         };
-
-        $scope.toggleLeft();
 
     })
 
