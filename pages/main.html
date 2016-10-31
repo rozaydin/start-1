@@ -17,15 +17,22 @@
         <!-- side navigation -->
         <md-sidenav style="max-width: 300px !important;" flex layout="column" class="md-sidenav-left" md-component-id='left' md-whiteframe="4"
                     md-is-locked-open="$mdMedia('gt-lg')">
-
+            <!--
             <md-toolbar>
                 <h1 class="md-toolbar-tools">Side Menu</h1>
             </md-toolbar>
+            -->
 
-            <md-content layout-margin>
+            <md-content class="md-padding" layout="column">
+
+                <div layout="column" layout-align="center start">
+                    <img src="resources/images/admin.jpg" style="width: 96px; height: 96px; border-radius: 48px;" class="md-user-avatar" alt="">
+                </div>
+
                 <p>
                     Page Navigation Menu
                 </p>
+
             </md-content>
 
         </md-sidenav>
