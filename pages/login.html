@@ -10,23 +10,25 @@
         </md-toolbar>
 
         <!-- Body -->
-        <form name="inputForm" layout="column" class="md-padding">
+        <form name="loginForm" layout="column" class="md-padding">
 
             <md-input-container class="md-no-float">
                 <md-icon><i class="zmdi zmdi-account-circle zmdi-hc-lg"></i></md-icon>
-                <input placeholder="Username" ng-model="user.title">
+                <input placeholder="Username" ng-model="user.username" required>
             </md-input-container>
 
             <md-input-container>
                 <label>Password</label>
                 <md-icon><i class="zmdi zmdi-lock-outline zmdi-hc-lg"></i></md-icon>
-                <input ng-model="user.email" type="email">
+                <input ng-model="user.password" type="password" required>
             </md-input-container>
+
+            <!-- Footer -->
+            <div layout="row" layout-align="center center">
+                <md-button flex="40" ng-disabled="loginForm.$invalid" class="md-raised" ui-sref="main.dash">Login</md-button>
+            </div>
 
         </form>
 
-
-        <!-- Footer -->
-        <md-button ui-sref="main.dash">Login</md-button>
     </md-whiteframe>
 </md-content>

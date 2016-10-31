@@ -3,9 +3,7 @@
  */
 
 function TestCtrl($scope) {
-
     console.log($scope)
-
 }
 
 angular.module("components", [])

@@ -55,7 +55,7 @@ angular.module('app', ['ui.router',
             .accentPalette('blue')
             .dark();
 
-        $mdThemingProvider.setDefaultTheme('night');
+        $mdThemingProvider.setDefaultTheme('day');
 
         // Configure States
 
