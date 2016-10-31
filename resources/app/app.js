@@ -37,11 +37,25 @@ angular.module('app', ['ui.router',
      */
     .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, $mdDateLocaleProvider) {
 
-        $mdThemingProvider.theme('docs-dark', 'default')
+        $mdThemingProvider.theme('day')
+            .primaryPalette('light-blue')
+            .warnPalette('red')
+            .accentPalette('orange');
+            /*.backgroundPalette('blue-grey');*/
+
+        $mdThemingProvider.theme('dusk')
+            .primaryPalette('yellow')
+            .warnPalette('red')
+            .accentPalette('orange');
+        /*.backgroundPalette('blue-grey');*/
+
+        $mdThemingProvider.theme('night')
             .primaryPalette('grey')
             .warnPalette('red')
             .accentPalette('blue')
             .dark();
+
+        $mdThemingProvider.setDefaultTheme('night');
 
         // Configure States
 
