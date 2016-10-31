@@ -1,0 +1,10 @@
+/** ng-md-icon hack */
+md-input-container > ng-md-icon {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+}
+
+md-input-container > ng-md-icon + input {
+    margin-left: 56px;
+}

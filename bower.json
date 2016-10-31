@@ -31,6 +31,7 @@
     "angular-material-icons": "latest",
     "flag-icon-css": "latest",
     "font-awesome": "latest",
-    "ngletteravatar": "latest"
+    "ngletteravatar": "latest",
+    "material-design-iconic-font": "^2.2.0"
   }
 }

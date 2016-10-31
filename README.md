@@ -19,6 +19,6 @@ start-1 includes below libraries:
 * [angular-material-data-table](https://github.com/daniel-nagy/md-data-table)
 * [flag-icon-css](https://github.com/lipis/flag-icon-css)
 * [font-awesome](http://fontawesome.io/)
-* [angular-material-icons](https://klarsys.github.io/angular-material-icons/)
+* [material-design-iconic-fonts](https://github.com/zavoloklom/material-design-iconic-font)
 * [ng-letter-avatar](https://github.com/uttesh/ngletteravatar)
 

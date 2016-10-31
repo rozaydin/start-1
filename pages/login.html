@@ -1,9 +1,32 @@
 <md-content layout="row" md-theme="docs-dark" layout-fill layout-align="center center" ng-cloak>
 
+    <md-whiteframe layout="column" class="md-whiteframe-2dp" flex="66" flex-gt-md="33">
 
-    <md-whiteframe layout="row" class="md-whiteframe-2dp" flex="45">
+        <!-- Header -->
+        <md-toolbar class="md-hue-2">
+            <h2 class="md-toolbar-tools">
+                <span>Login</span>
+            </h2>
+        </md-toolbar>
 
+        <!-- Body -->
+        <form name="inputForm" layout="column" class="md-padding">
+
+            <md-input-container class="md-no-float">
+                <md-icon><i class="zmdi zmdi-account-circle zmdi-hc-lg"></i></md-icon>
+                <input placeholder="Username" ng-model="user.title">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Password</label>
+                <md-icon><i class="zmdi zmdi-lock-outline zmdi-hc-lg"></i></md-icon>
+                <input ng-model="user.email" type="email">
+            </md-input-container>
+
+        </form>
+
+
+        <!-- Footer -->
         <md-button ui-sref="main.dash">Login</md-button>
     </md-whiteframe>
-
 </md-content>
