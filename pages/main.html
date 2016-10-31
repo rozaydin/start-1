@@ -1,8 +1,8 @@
-<md-content layout="column" layout-fill md-theme="docs-dark" class="md-padding">
+<md-content layout="column" layout-fill md-theme="docs-dark">
     <!-- navigation bar -->
     <md-toolbar class="md-hue-2">
         <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()">
+            <md-button hide-gt-lg class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
 
@@ -13,22 +13,26 @@
         </div>
     </md-toolbar>
 
-    <!-- side navigation -->
-    <md-sidenav class="md-sidenav-left" md-component-id='left' md-whiteframe="4">
+    <div flex layout="row">
+        <!-- side navigation -->
+        <md-sidenav flex layout="column" class="md-sidenav-left" md-component-id='left' md-whiteframe="4"
+                    md-is-locked-open="$mdMedia('gt-lg')">
 
-        <md-toolbar>
-            <h1 class="md-toolbar-tools">Side Menu</h1>
-        </md-toolbar>
+            <md-toolbar>
+                <h1 class="md-toolbar-tools">Side Menu</h1>
+            </md-toolbar>
 
-        <md-content layout-margin>
-            <p>
-                Page Navigation Menu
-            </p>
-        </md-content>
+            <md-content layout-margin>
+                <p>
+                    Page Navigation Menu
+                </p>
+            </md-content>
 
-    </md-sidenav>
+        </md-sidenav>
 
-    <!-- content -->
-    <div ui-view="content"></div>
+        <!-- content -->
+        <div ui-view="content"></div>
 
-<md-content/>
+    </div>
+
+    <md-content/>
