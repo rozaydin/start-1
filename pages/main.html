@@ -25,16 +25,25 @@
 
             <md-content class="md-padding" layout="column">
 
-                <div layout="column" layout-align="center center">
+                <div layout="column" layout-padding layout-align="center center">
                     <img src="resources/images/admin.jpg" style="width: 96px; height: 96px; border-radius: 48px;" class="md-user-avatar" alt="">
                 </div>
 
                 <!-- Navigation -->
+
+                <!-- dashboard -->
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-widgets zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" ui-sref="main.dash" flex="80">Dashboard</md-button>
+                </div>
+                <!-- settings -->
                 <div layout="row">
                     <div flex="20" class="center-icon">
                         <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-settings zmdi-hc-2x"></i>
                     </div>
-                    <a class="md-button md-ink-ripple menu-btn" ui-sref="main.settings" flex="80">Settings</a>
+                    <md-button class="menu-btn" ui-sref="main.settings" flex="80">Settings</md-button>
                 </div>
 
                 <!-- Test Links -->
@@ -56,7 +65,7 @@
                     <div flex="20" class="center-icon">
                         <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-texture zmdi-hc-2x"></i>
                     </div>
-                    <md-button class="menu-btn" flex="80">Link-3</md-button>
+                    <md-button ui-sref="main.settings" class="menu-btn" flex="80">Link-3</md-button>
                 </div>
 
             </md-content>
