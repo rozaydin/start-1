@@ -18,11 +18,16 @@ angular.module("controllers", [])
 
     })
 
-
     // Dash Ctrl
     .controller("DashCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage) {
 
-    });
+    })
+
+    // Settings Ctrl
+    .controller("SettingsCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage) {
+
+    })
+;
 
 
 

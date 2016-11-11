@@ -82,7 +82,7 @@ angular.module('app', ['ui.router',
                  }*/
             })
 
-            // settings state
+            // dashboard state
             .state('main.dash', {
                 url: '/dash',
                 views: {
@@ -91,8 +91,19 @@ angular.module('app', ['ui.router',
                         controller: 'DashCtrl'
                     }
                 }
-            });
+            })
 
+            // settings state
+            .state('main.settings', {
+                url: '/settings',
+                views: {
+                    'content': {
+                        templateUrl: 'pages/settings.html',
+                        controller: 'SettingsCtrl'
+                    }
+                }
+            })
+        ;
 
         // if none of the above states are matched, use this as the fallback
         // $urlRouterProvider.otherwise('/login');
