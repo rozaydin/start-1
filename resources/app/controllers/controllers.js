@@ -12,9 +12,17 @@ angular.module("controllers", [])
     // Main Ctrl
     .controller("MainCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $mdSidenav) {
 
+        // sidebar
         $scope.toggleLeft = function () {
             $mdSidenav("left").toggle();
         };
+        // close sidebar when user navigates to another view
+        $scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options){
+            // when user navigates to another view close sidenav
+            if ($mdSidenav("left").isOpen()) {
+               $scope.toggleLeft();
+            }
+        });
 
     })
 
