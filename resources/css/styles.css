@@ -1,10 +1,16 @@
-/** ng-md-icon hack */
-md-input-container > ng-md-icon {
-    position: absolute;
-    top: 5px;
-    left: 2px;
+/** center icons */
+.center-icon {
+    line-height: 48px;
+    text-align: center;
 }
 
-md-input-container > ng-md-icon + input {
-    margin-left: 56px;
+.center-icon > i {
+    line-height: normal;
+    vertical-align: middle;
+}
+
+/** Button Styles */
+.menu-btn {
+    text-align: center;
+    text-transform: capitalize;
 }

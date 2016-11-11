@@ -15,7 +15,7 @@
 
     <div flex layout="row">
         <!-- side navigation -->
-        <md-sidenav style="max-width: 300px !important;" flex layout="column" class="md-sidenav-left" md-component-id='left' md-whiteframe="4"
+        <md-sidenav style="max-width: 250px !important;" flex layout="column" class="md-sidenav-left" md-component-id='left' md-whiteframe="4"
                     md-is-locked-open="$mdMedia('gt-lg')">
             <!--
             <md-toolbar>
@@ -25,13 +25,39 @@
 
             <md-content class="md-padding" layout="column">
 
-                <div layout="column" layout-align="center start">
+                <div layout="column" layout-align="center center">
                     <img src="resources/images/admin.jpg" style="width: 96px; height: 96px; border-radius: 48px;" class="md-user-avatar" alt="">
                 </div>
 
-                <p>
-                    Page Navigation Menu
-                </p>
+                <!-- Navigation -->
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-settings zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" flex="80">Settings</md-button>
+                </div>
+
+                <!-- Test Links -->
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-pin zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" flex="80">Link-1</md-button>
+                </div>
+
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-steam zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" flex="80">Link-2</md-button>
+                </div>
+
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-texture zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" flex="80">Link-3</md-button>
+                </div>
 
             </md-content>
 
