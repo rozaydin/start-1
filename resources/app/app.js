@@ -94,12 +94,12 @@ angular.module('app', ['ui.router',
             })
 
             // settings state
-            .state('main.settings', {
-                url: '/settings',
+            .state('main.account', {
+                url: '/account',
                 views: {
                     'content': {
-                        templateUrl: 'pages/settings.html',
-                        controller: 'SettingsCtrl'
+                        templateUrl: 'pages/account.html',
+                        controller: 'AccountsCtrl'
                     }
                 }
             })
