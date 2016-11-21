@@ -4,9 +4,12 @@
     <!-- search -->
     <div class="center-icon">
         <i class="zmdi zmdi-search zmdi-hc-2x"></i>
-        <input type="text">
     </div>
 
+    <md-input-container flex>
+        <label>Search</label>
+        <input ng-model="user.title">
+    </md-input-container>
 
     <md-button class="md-raised md-fab md-mini">
         <i class="zmdi zmdi-account-add zmdi-hc-lg"></i>
@@ -18,15 +21,19 @@
         <i class="zmdi zmdi-delete zmdi-hc-lg"></i>
     </md-button>
 
-
-
-
-
 </div>
 
-<!-- users list -->
+<!-- users list
+1. username
+2. email
+3. name
+4. surname
+5. pimage (profile image)
+6. mobile
+7. role
+-->
 
-<div>
-    Users list
+<div layout="column" layout-margin>
+
 </div>
 
