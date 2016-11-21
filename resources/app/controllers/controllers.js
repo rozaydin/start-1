@@ -27,7 +27,9 @@ angular.module("controllers", [])
     .controller("SettingsCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage) {
 
     })
+
+    // Users Ctrl
+    .controller("UsersCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage) {
+
+    })
 ;
-
-
-

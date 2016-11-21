@@ -103,6 +103,17 @@ angular.module('app', ['ui.router',
                     }
                 }
             })
+        
+        // users state
+            .state('main.users', {
+                url: '/users',
+                views: {
+                    'content': {
+                        templateUrl: 'pages/users.html',
+                        controller: 'UsersCtrl'
+                    }
+                }
+            })
         ;
 
         // if none of the above states are matched, use this as the fallback

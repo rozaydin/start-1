@@ -17,11 +17,6 @@
         <!-- side navigation -->
         <md-sidenav style="max-width: 250px !important;" flex layout="column" class="md-sidenav-left" md-component-id='left' md-whiteframe="4"
                     md-is-locked-open="$mdMedia('gt-lg')">
-            <!--
-            <md-toolbar>
-                <h1 class="md-toolbar-tools">Side Menu</h1>
-            </md-toolbar>
-            -->
 
             <md-content class="md-padding" layout="column">
 
@@ -34,7 +29,15 @@
                     <div flex="20" class="center-icon">
                         <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-settings zmdi-hc-2x"></i>
                     </div>
-                    <a class="md-button md-ink-ripple menu-btn" ui-sref="main.settings" flex="80">Settings</a>
+                    <md-button class="md-button md-ink-ripple menu-btn" ui-sref="main.settings" flex="80">Settings</md-button>
+                </div>
+                
+                <!-- User Management -->
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-accounts zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" ui-sref="main.users" flex="80">Users</md-button>
                 </div>
 
                 <!-- Test Links -->
@@ -64,7 +67,7 @@
         </md-sidenav>
 
         <!-- content -->
-        <div ui-view="content"></div>
+        <div flex ui-view="content"></div>
 
     </div>
 
