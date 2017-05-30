@@ -1,0 +1,83 @@
+<!-- crud panel -->
+<div layout="row" layout-margin>
+
+    <!-- search -->
+    <div class="center-icon">
+        <i class="zmdi zmdi-search zmdi-hc-2x"></i>
+    </div>
+
+    <md-input-container flex>
+        <label>Search</label>
+        <input ng-model="query.text">
+    </md-input-container>
+
+    <md-button class="md-raised md-fab md-mini" ui-sref="main.gameNew">
+        <i class="zmdi zmdi-plus zmdi-hc-lg"></i>
+    </md-button>
+
+    <md-button class="md-raised md-fab md-mini" ng-disabled="selected == null || selected.length <= 0" ng-click="handleEdit(selected[0])">
+        <i class="zmdi zmdi-edit zmdi-hc-lg"></i>
+    </md-button>
+
+    <md-button class="md-raised md-fab md-mini md-warn" ng-disabled="selected == null || selected.length <= 0" ng-click="handleDelete(selected[0])">
+        <i class="zmdi zmdi-delete zmdi-hc-lg"></i>
+    </md-button>
+
+</div>
+
+<div layout="column" layout-margin>
+
+    <md-table-container>
+        <table md-table md-progress="list" md-row-select ng-model="selected">
+            <thead md-head>
+            <tr md-row>
+                <th md-column>Id</th>
+                <th md-column>title</th>
+                <th md-column>day</th>
+                <th md-column>thumbnail</th>
+            </tr>
+            </thead>
+
+            <tbody md-body>
+            <tr md-row md-select="event" md-select-id="id" md-auto-select
+                ng-repeat="event in events | filterBy:['id', 'title', 'day'] : query.text | orderBy: id | limitTo: query.limit: (query.page - 1) * query.limit">
+                <td md-cell>{{event.id}}</td>
+                <td md-cell>{{event.title}}</td>
+                <td md-cell>{{event.day}}</td>
+                <td md-cell>
+                    <img ng-if="event.thumbnail" src="{{ 'http://hergunebiroyun.rhtech.com.tr/images/' + event.thumbnail }}" style="width: 64px; height: 64px; margin: 4px;">
+                </td>
+                <!--
+                <td md-cell>
+                    <flag locale="{{hospital.LOCALE}}"></flag>
+                </td>
+                -->
+                <!--
+                <td md-cell>
+                    <md-icon style="color: #72d572;" ng-if="hospital.ACTIVE">check</md-icon>
+                    <md-icon style="color: indianred" ng-if="!hospital.ACTIVE">close</md-icon>
+                </td>
+                -->
+            </tr>
+            </tbody>
+
+        </table>
+    </md-table-container>
+
+    <md-table-pagination md-limit="query.limit" md-limit-options="[10, 25, 50, 100]" md-page-select md-page="query.page"
+                         md-total="{{events.length}}"></md-table-pagination>
+
+</div>
+
+<!-- users list
+1. username
+2. email
+3. name
+4. surname
+5. pimage (profile image)
+6. mobile
+7. role
+-->
+
+<div layout="column" layout-margin>
+</div>

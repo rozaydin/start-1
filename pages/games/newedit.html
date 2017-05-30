@@ -1,0 +1,85 @@
+<form name="entryForm">
+
+    <div layout="row">
+
+        <!-- event title -->
+        <md-input-container class="md-block" flex="50">
+            <label>Baslik</label>
+            <input md-maxlength="50" required name="title" ng-model="entry.title"> <!-- md-no-asterisk -->
+            <div ng-messages="entryForm.title.$error">
+                <div ng-message="required">Bu alan bos birakilamaz.</div>
+                <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Gun</label>
+            <input type="number" required name="day" ng-model="entry.day"> <!-- md-no-asterisk -->
+            <div ng-messages="entryForm.title.$error">
+                <div ng-message="required">Bu alan bos birakilamaz.</div>
+                <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+            </div>
+        </md-input-container>
+
+        <!-- event type -->
+        <!--<md-input-container class="md-block" flex="20">-->
+        <!--<label>Tur</label>-->
+        <!--<md-select name="type" ng-model="entry.type" required>-->
+        <!--<md-option value="game"> Oyun</md-option>-->
+        <!--</md-select>-->
+        <!--</md-input-container>-->
+
+        <!-- event date-->
+        <!--<md-input-container class="md-block" flex="20">-->
+        <!--<label>Zaman</label>-->
+        <!--<input type="date" ng-model="entry.date" md-select-on-focus required/>-->
+        <!--</md-input-container>-->
+
+    </div>
+
+    <!-- content brief info -->
+    <!--<md-input-container class="md-block" flex="80">-->
+    <!--<label>Abstract</label>-->
+    <!--<textarea ng-model="entry.abstract" md-maxlength="150" rows="3" md-select-on-focus></textarea>-->
+    <!--</md-input-container>-->
+
+    <div layout="row" style="margin-bottom: 1em;">
+
+        <div flex="30">
+            <md-button class="md-raised" ng-click="triggerFileInput($event)">Resim
+                <input class="ng-hide image-selector"
+                       ng-click="$event.stopPropagation();"
+                       type="file"
+                       id="image"
+                       name="image"
+                       image-with-preview
+                       ng-model="image"
+                       base64="entry.image"
+                       imageSize='{"width":800, "height": 600}'
+                       thumbnail="entry.thumbnail" accept="image/jpeg,image/png">
+            </md-button>
+        </div>
+
+        <div class="md-whiteframe-5dp" style="text-align: center; margin: 4px; width: 250px; height: 250px;">
+            <img style="display: inline-block; margin: 2px; width: 196px; max-height: 196px; height: auto;"
+                 ng-if="entry.thumbnail" ng-src="{{ imageUpdated ? entry.thumbnail : 'http://hergunebiroyun.rhtech.com.tr/images/' + entry.thumbnail }}"/>
+        </div>
+    </div>
+
+    <!-- text area -->
+    <div text-angular
+         ta-toolbar="[['h1','h2','h3','h4','h5','h6','p','pre','quote','bold','italics','underline','strikeThrough','ul','ol','undo','redo','clear'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent']]"
+         ta-toolbar-class="btn-toolbar" ta-toolbar-group-class="btn-group" ta-toolbar-button-class="btn btn-default"
+         ta-toolbar-active-button-class="active"
+         ng-model="entry.html">
+    </div>
+
+
+</form>
+
+<div flex layout="row" layout-align="end end">
+    <md-button ng-disabled="!entryForm.$valid" ng-click="handleSubmit()" type="button" class="md-positive md-raised">Submit</md-button>
+    <md-button ng-click="handleCancel()" type="cancel" class="md-warn md-raised">Cancel</md-button>
+</div>
+
+

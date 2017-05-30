@@ -32,6 +32,9 @@
     "flag-icon-css": "latest",
     "font-awesome": "latest",
     "ngletteravatar": "latest",
-    "material-design-iconic-font": "^2.2.0"
+    "material-design-iconic-font": "^2.2.0",
+    "textAngular": "latest",
+    "angular-file-upload": "^2.5.0",
+    "lodash": "^4.17.4"
   }
 }

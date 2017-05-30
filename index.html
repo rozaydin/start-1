@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width">
+    <title>HerGuneBirOyun</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="resources/lib/angular-material/angular-material.min.css">
@@ -12,13 +13,18 @@
     <link rel="stylesheet" href="resources/lib/angular-material-data-table/dist/md-data-table.min.css">
     <link rel="stylesheet"
           href="resources/lib/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel='stylesheet' href='resources/lib/textAngular/dist/textAngular.css'>
     <link rel="stylesheet" href="resources/css/styles.css">
 
     <!-- js libraries -->
+    <script src="resources/lib/lodash/dist/lodash.js" defer></script>
     <script src="resources/lib/angular/angular.js" defer></script>
     <script src="resources/lib/angular-animate/angular-animate.min.js" defer></script>
     <script src="resources/lib/angular-messages/angular-messages.min.js" defer></script>
+    <script src="resources/lib/angular-filter/dist/angular-filter.min.js" defer></script>
+    <!-- disabled in favor of text angular sanitize
     <script src="resources/lib/angular-sanitize/angular-sanitize.min.js" defer></script>
+    -->
     <script src="resources/lib/angular-aria/angular-aria.min.js" defer></script>
     <!-- angular-ui-router -->
     <script src="resources/lib/angular-ui-router/release/angular-ui-router.min.js" defer></script>
@@ -27,6 +33,7 @@
     <script src="resources/lib/angular-permission/dist/angular-permission-ui.min.js" defer></script>
     <!-- angular-material -->
     <script src="resources/lib/angular-material/angular-material.min.js" defer></script>
+
     <!-- angular material icons -->
     <script src="resources/lib/angular-material-icons/angular-material-icons.min.js" defer></script>
     <script src="resources/lib/ngstorage/ngStorage.min.js" defer></script>
@@ -34,17 +41,26 @@
     <script src="resources/lib/angular-material-data-table/dist/md-data-table.min.js" defer></script>
     <script src="resources/lib/ngletteravatar/dist/ngletteravatar.min.js" defer></script>
 
+    <!-- text angular -->
+    <script src='resources/lib/textAngular/dist/textAngular-rangy.min.js' defer></script>
+    <script src='resources/lib/textAngular/dist/textAngular-sanitize.min.js' defer></script>
+    <script src='resources/lib/textAngular/dist/textAngular.min.js' defer></script>
+
+    <!-- angular file upload -->
+    <script src="resources/lib/angular-file-upload/dist/angular-file-upload.min.js" defer></script>
+    <script src="resources/3rdparty/roza.js" defer></script>
+
     <!-- application -->
     <script src="resources/app/app.js" defer></script>
     <script src="resources/app/services/services.js" defer></script>
+    <script src="resources/app/services/utilservice.js" defer></script>
     <script src="resources/app/controllers/controllers.js" defer></script>
     <script src="resources/app/directives/directives.js" defer></script>
     <script src="resources/app/components/components.js" defer></script>
 
 </head>
 
-<body ng-app="app">
-  <div layout-fill ui-view></div>
+<body ng-app="app" ui-view>
 </body>
 
 </html>

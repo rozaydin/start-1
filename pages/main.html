@@ -1,4 +1,4 @@
-<md-content layout="column" layout-fill>
+<md-content layout-fill layout="column">
     <!-- navigation bar -->
     <md-toolbar class="md-hue-2">
         <div class="md-toolbar-tools">
@@ -7,59 +7,61 @@
             </md-button>
 
             <h2>
-                <span>Sample Application</span>
+                <span>Her Gune Bir Oyun</span>
             </h2>
 
         </div>
     </md-toolbar>
 
-    <div flex layout="row">
+    <!-- inner content -->
+    <div flex layout-fill layout="row">
+
         <!-- side navigation -->
-        <md-sidenav style="max-width: 250px !important;" flex layout="column" class="md-sidenav-left" md-component-id='left' md-whiteframe="4"
-                    md-is-locked-open="$mdMedia('gt-lg')">
+        <md-sidenav flex style="max-width: 250px !important;" layout="column" class="md-sidenav-left"
+                    md-component-id='left' md-whiteframe="4"
+                    md-is-locked-open="$mdMedia('lg')">
 
             <md-content class="md-padding" layout="column">
 
                 <div layout="column" layout-align="center center">
-                    <img src="resources/images/admin.jpg" style="width: 96px; height: 96px; border-radius: 48px;" class="md-user-avatar" alt="">
+                    <img src="resources/images/logo.jpg" style="width: 96px; height: 96px; border-radius: 48px;"
+                         class="md-user-avatar" alt="">
                 </div>
 
-                <!-- Navigation -->
+                <!-- Games (Oyunlar) -->
                 <div layout="row">
                     <div flex="20" class="center-icon">
-                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-settings zmdi-hc-2x"></i>
+                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-apps zmdi-hc-2x"></i>
                     </div>
-                    <md-button class="md-button md-ink-ripple menu-btn" ui-sref="main.account" flex="80">Account</md-button>
+                    <md-button class="menu-btn" ui-sref="main.games" flex="80">Oyunlar</md-button>
+                </div>
+
+                <!-- Bildirimler (Notifications) -->
+                <div layout="row">
+                    <div flex="20" class="center-icon">
+                        <i style="line-height: normal; vertical-align: middle;"
+                           class="zmdi zmdi-notifications zmdi-hc-2x"></i>
+                    </div>
+                    <md-button class="menu-btn" ui-sref="main.notifications" flex="80">Bildirimler</md-button>
                 </div>
 
                 <!-- User Management -->
                 <div layout="row">
                     <div flex="20" class="center-icon">
-                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-accounts zmdi-hc-2x"></i>
+                        <i style="line-height: normal; vertical-align: middle;"
+                           class="zmdi zmdi-accounts zmdi-hc-2x"></i>
                     </div>
-                    <md-button class="menu-btn" ui-sref="main.users" flex="80">Users</md-button>
+                    <md-button class="menu-btn" ui-sref="main.users" flex="80">Kullanicilar</md-button>
                 </div>
 
-                <!-- Test Links -->
+                <!-- Account -->
                 <div layout="row">
                     <div flex="20" class="center-icon">
-                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-pin zmdi-hc-2x"></i>
+                        <i style="line-height: normal; vertical-align: middle;"
+                           class="zmdi zmdi-account zmdi-hc-2x"></i>
                     </div>
-                    <md-button class="menu-btn" flex="80">Link-1</md-button>
-                </div>
-
-                <div layout="row">
-                    <div flex="20" class="center-icon">
-                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-steam zmdi-hc-2x"></i>
-                    </div>
-                    <md-button class="menu-btn" flex="80">Link-2</md-button>
-                </div>
-
-                <div layout="row">
-                    <div flex="20" class="center-icon">
-                        <i style="line-height: normal; vertical-align: middle;" class="zmdi zmdi-texture zmdi-hc-2x"></i>
-                    </div>
-                    <md-button class="menu-btn" flex="80">Link-3</md-button>
+                    <md-button class="md-button md-ink-ripple menu-btn" ui-sref="main.account" flex="80">Hesap
+                    </md-button>
                 </div>
 
             </md-content>
@@ -67,8 +69,8 @@
         </md-sidenav>
 
         <!-- content -->
-        <div flex ui-view="content"></div>
+        <div flex layout-padding style="overflow: auto; display: block;" ui-view="content"></div>
 
     </div>
 
-    <md-content/>
+</md-content>
