@@ -2,12 +2,12 @@
  * Created by rozaydin on 10/12/16.
  */
 angular.module("services", [])
-// constant
-    // .constant('baseURL', 'http://localhost:8058/hergunebiroyun')
-    .constant('baseURL', 'http://rhtech.com.tr:8058/hergunebiroyun')
-    .factory('eventSvc', ['baseURL', '$q', '$http', EventService]);
+    .constant('baseURL', 'http://localhost')
+    .constant('restURL', 'http://localhost:8058/hergunebiroyun')
+    .constant('imageURL', 'http://localhost/images')
+    .factory('eventSvc', ['restURL', '$q', '$http', EventService]);
 
-function EventService(baseURL, $q, $http) {
+function EventService(restURL, $q, $http) {
 
     const SERVICE_REST_PATH = 'event';
     const HEADER_SET = {'Content-Type': 'application/json; charset=utf-8'};
@@ -41,7 +41,7 @@ function EventService(baseURL, $q, $http) {
             return $q(function (resolve, reject) {
                 return $http({
                     method: 'GET',
-                    url: baseURL + '/' + SERVICE_REST_PATH + '/' + id,
+                    url: restURL + '/' + SERVICE_REST_PATH + '/' + id,
                     headers: HEADER_SET
                 }).then(function (success) {
                     // success
@@ -58,7 +58,7 @@ function EventService(baseURL, $q, $http) {
             return REST_HANDLER(
                 $http({
                     method: 'GET',
-                    url: baseURL + '/' + SERVICE_REST_PATH + '/' + id,
+                    url: restURL + '/' + SERVICE_REST_PATH + '/' + id,
                     headers: HEADER_SET
                 })
             );
@@ -69,7 +69,7 @@ function EventService(baseURL, $q, $http) {
             return REST_HANDLER(
                 $http({
                     method: 'GET',
-                    url: baseURL + '/' + SERVICE_REST_PATH,
+                    url: restURL + '/' + SERVICE_REST_PATH,
                     headers: HEADER_SET
                 })
             );
@@ -80,7 +80,7 @@ function EventService(baseURL, $q, $http) {
             return REST_HANDLER(
                 $http({
                     method: 'POST',
-                    url: baseURL + '/' + SERVICE_REST_PATH,
+                    url: restURL + '/' + SERVICE_REST_PATH,
                     headers: HEADER_SET,
                     data: event
                 })
@@ -92,7 +92,7 @@ function EventService(baseURL, $q, $http) {
             return REST_HANDLER(
                 $http({
                     method: 'PUT',
-                    url: baseURL + '/' + SERVICE_REST_PATH + '/' + id ,
+                    url: restURL + '/' + SERVICE_REST_PATH + '/' + id,
                     headers: {
                         'Content-Type': 'application/json; charset=utf-8',
                         'ImageUpdated': imageUpdated
@@ -107,7 +107,7 @@ function EventService(baseURL, $q, $http) {
             return REST_HANDLER(
                 $http({
                     method: 'DELETE',
-                    url: baseURL + '/' + SERVICE_REST_PATH + '/' + id,
+                    url: restURL + '/' + SERVICE_REST_PATH + '/' + id,
                     headers: HEADER_SET
                 })
             );

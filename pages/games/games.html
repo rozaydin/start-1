@@ -11,14 +11,22 @@
         <input ng-model="query.text">
     </md-input-container>
 
+    <!-- new Game Button -->
     <md-button class="md-raised md-fab md-mini" ui-sref="main.gameNew">
         <i class="zmdi zmdi-plus zmdi-hc-lg"></i>
     </md-button>
 
+    <!-- Edit Game Button -->
     <md-button class="md-raised md-fab md-mini" ng-disabled="selected == null || selected.length <= 0" ng-click="handleEdit(selected[0])">
         <i class="zmdi zmdi-edit zmdi-hc-lg"></i>
     </md-button>
 
+    <!-- Preview Game Button -->
+    <md-button class="md-raised md-fab md-mini" ng-disabled="selected == null || selected.length <= 0" ng-click="handlePreview(selected[0])">
+        <i class="zmdi zmdi-eye zmdi-hc-lg"></i>
+    </md-button>
+
+    <!-- Delete Game Button -->
     <md-button class="md-raised md-fab md-mini md-warn" ng-disabled="selected == null || selected.length <= 0" ng-click="handleDelete(selected[0])">
         <i class="zmdi zmdi-delete zmdi-hc-lg"></i>
     </md-button>
@@ -45,7 +53,7 @@
                 <td md-cell>{{event.title}}</td>
                 <td md-cell>{{event.day}}</td>
                 <td md-cell>
-                    <img ng-if="event.thumbnail" src="{{ 'http://hergunebiroyun.rhtech.com.tr/images/' + event.thumbnail }}" style="width: 64px; height: 64px; margin: 4px;">
+                    <img ng-if="event.thumbnail" src="{{ imageURL + '/' + event.thumbnail }}" style="width: 64px; height: 64px; margin: 4px;">
                 </td>
                 <!--
                 <td md-cell>

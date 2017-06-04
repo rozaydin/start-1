@@ -21,27 +21,7 @@
             </div>
         </md-input-container>
 
-        <!-- event type -->
-        <!--<md-input-container class="md-block" flex="20">-->
-        <!--<label>Tur</label>-->
-        <!--<md-select name="type" ng-model="entry.type" required>-->
-        <!--<md-option value="game"> Oyun</md-option>-->
-        <!--</md-select>-->
-        <!--</md-input-container>-->
-
-        <!-- event date-->
-        <!--<md-input-container class="md-block" flex="20">-->
-        <!--<label>Zaman</label>-->
-        <!--<input type="date" ng-model="entry.date" md-select-on-focus required/>-->
-        <!--</md-input-container>-->
-
     </div>
-
-    <!-- content brief info -->
-    <!--<md-input-container class="md-block" flex="80">-->
-    <!--<label>Abstract</label>-->
-    <!--<textarea ng-model="entry.abstract" md-maxlength="150" rows="3" md-select-on-focus></textarea>-->
-    <!--</md-input-container>-->
 
     <div layout="row" style="margin-bottom: 1em;">
 
@@ -61,8 +41,12 @@
         </div>
 
         <div class="md-whiteframe-5dp" style="text-align: center; margin: 4px; width: 250px; height: 250px;">
+            <!-- New State Image Display -->
             <img style="display: inline-block; margin: 2px; width: 196px; max-height: 196px; height: auto;"
-                 ng-if="entry.thumbnail" ng-src="{{ imageUpdated ? entry.thumbnail : 'http://hergunebiroyun.rhtech.com.tr/images/' + entry.thumbnail }}"/>
+                 ng-if="state === 'New' && entry.thumbnail" ng-src="{{ entry.thumbnail }}"/>
+            <!-- Edit State Image Display -->
+            <img style="display: inline-block; margin: 2px; width: 196px; max-height: 196px; height: auto;"
+                 ng-if="state === 'Edit' && entry.thumbnail" ng-src="{{ imageUpdated ? entry.thumbnail : imageURL + '/' + entry.thumbnail }}"/>
         </div>
     </div>
 

@@ -138,6 +138,17 @@ angular.module('app', ['ui.router',
                 }
             })
 
+            // preview game
+            .state('main.gamePreview', {
+                url: '/previewGame',
+                views: {
+                    'content': {
+                        templateUrl: 'pages/games/preview.html',
+                        controller: 'GamesPreviewCtrl'
+                    }
+                }
+            })
+
             // notifications state
             .state('main.notifications', {
                 url: '/notifications',

@@ -42,8 +42,9 @@ angular.module("controllers", [])
     })
 
     // Games Ctrl
-    .controller("GamesCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, eventSvc, utilSvc) {
+    .controller("GamesCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, imageURL, eventSvc, utilSvc) {
 
+        $scope.imageURL = imageURL;
         $scope.selected = [];
         $scope.events = [];
 
@@ -78,6 +79,12 @@ angular.module("controllers", [])
             $state.go('main.gameEdit');
         };
 
+        // handle edit
+        $scope.handlePreview = function (event) {
+            $sessionStorage.selectedEvent = event;
+            $state.go('main.gamePreview');
+        };
+
         // handle delete
         $scope.handleDelete = function (event) {
             utilSvc.showConfirm().then(
@@ -103,7 +110,7 @@ angular.module("controllers", [])
     })
 
     // Games Ctrl
-    .controller("GamesNewCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, eventSvc, utilSvc) {
+    .controller("GamesNewCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, imageURL, eventSvc, utilSvc) {
 
         $scope.entry = {
             title: null,
@@ -112,6 +119,8 @@ angular.module("controllers", [])
             image: null,
             html: null
         };
+        // Base URL for images
+        $scope.imageURL = imageURL;
         $scope.state = 'New';
 
         // Handle File Input Clicks
@@ -147,9 +156,11 @@ angular.module("controllers", [])
     })
 
     // Games Ctrl
-    .controller("GamesEditCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, eventSvc, utilSvc) {
+    .controller("GamesEditCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, imageURL, eventSvc, utilSvc) {
 
         $scope.entry = $sessionStorage.selectedEvent;
+        // BaseUrl For Images
+        $scope.imageURL = imageURL;
         $scope.state = 'Edit';
         $scope.imageUpdated = false;
 
@@ -181,6 +192,26 @@ angular.module("controllers", [])
 
         // handle cancel
         $scope.handleCancel = function () {
+            $scope.entry = {};
+            $state.go('main.games');
+        };
+    })
+
+
+    // Games Ctrl
+    .controller("GamesPreviewCtrl", function ($scope, $state, $stateParams, $sessionStorage, $localStorage, $timeout, imageURL, eventSvc, utilSvc) {
+
+        $scope.entry = $sessionStorage.selectedEvent;
+        $scope.imageURL = imageURL;
+
+        console.log($scope.entry);
+
+        // BaseUrl For Images
+        $scope.imageURL = imageURL;
+        $scope.state = 'Preview';
+
+        // handle cancel
+        $scope.handleClose = function () {
             $scope.entry = {};
             $state.go('main.games');
         };
